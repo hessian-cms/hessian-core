@@ -1,4 +1,3 @@
 export * from "./Process.interface"
-export * from "./ProcessState.interface"
-export * from "./ProcessStateTransition.interface"
+export * from "./ProcessTransition.interface"
 export * from "./functions"

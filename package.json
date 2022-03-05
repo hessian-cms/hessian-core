@@ -3,7 +3,8 @@
   "types": "dist/hessian.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Not implemented\""
+    "test": "echo \"Not implemented\"",
+    "postinstall": "tsc"
   },
   "dependencies": {
     "ajv": "^8.10.0",
