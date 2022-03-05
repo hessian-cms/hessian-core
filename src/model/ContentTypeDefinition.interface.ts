@@ -1,4 +1,4 @@
-import FileContentSchema from "./schema/FileContentSchema.interface";
+import { FileContentSchema } from "./schema/FileContentSchema.interface";
 
 export default interface ContentTypeDefinition {
     name: string,
