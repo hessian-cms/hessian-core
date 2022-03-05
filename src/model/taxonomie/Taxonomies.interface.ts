@@ -1,5 +1,5 @@
-import Taxonomy from "./Taxonomy.interface";
+import { Taxonomy } from "./Taxonomy.interface";
 
-export default interface Taxonomies {
+export interface Taxonomies {
     [name:string]: Taxonomy
 }

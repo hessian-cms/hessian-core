@@ -1,4 +1,4 @@
-export default interface FileContentSchema {
+export interface FileContentSchema {
     type: "FILE",
     maxSize?: number,
     minSize?: number,

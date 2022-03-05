@@ -1,3 +1,3 @@
-export default interface Taxonomy {
+export interface Taxonomy {
     
 }

@@ -1,6 +1,6 @@
 import { Schema } from "ajv";
 
-export default interface ObjectContentSchema {
+export interface ObjectContentSchema {
     type: "OBJECT",
     schema: Schema
 }
