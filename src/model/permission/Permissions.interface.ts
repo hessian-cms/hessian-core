@@ -1,3 +1,6 @@
+import { Permission } from "./Permission.interface";
+
 export interface Permissions {
-    [attribute: string]: Permissions
+    owner: Permission,
+    [attribute: string]: Permission
 }
