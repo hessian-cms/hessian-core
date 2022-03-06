@@ -19,7 +19,7 @@ describe("Process testing", () => {
         expect(validateProcess(INVALID_PROCESS_TARGET_DEMO)).rejects.toBeInstanceOf(ProcessMissingTarget);
     })
 
-    test("Invalid Process: wrong target", async () => {
+    test("Invalid Process: Not referenced", async () => {
         expect.assertions(1);
         expect(validateProcess(INVALID_PROCESS_NO_REFERENCE_TO_STATE)).rejects.toBeInstanceOf(NotReferenced);
     })
