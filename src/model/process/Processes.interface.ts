@@ -1,5 +1,6 @@
-import { ProcessTransition } from "./ProcessTransition.interface";
+import { Process } from "./Process.interface";
 
 export interface Processes {
-    [name: string]: ProcessTransition
+    entryProcess: `state${string}`,
+    [name: `state${string}`]: Process
 }

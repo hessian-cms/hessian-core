@@ -1,7 +1,8 @@
 export { Permission } from "./model/permission/Permission.interface"
 export { Permissions } from "./model/permission/Permissions.interface"
 
-export { validateProcess } from "./model/process/functions"
+export { validateProcesses } from "./model/process/functions"
+export {WrongEntryTarget, WrongTarget} from "./model/process/errors"
 export { Process } from "./model/process/Process.interface"
 export { Processes } from "./model/process/Processes.interface"
 export { ProcessTransition } from "./model/process/ProcessTransition.interface"
