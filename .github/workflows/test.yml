@@ -1,6 +1,10 @@
 name: Test Hessian CMS
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -17,6 +21,3 @@ jobs:
       run: npx yarn install
     - name: Walk tests
       run: npx yarn test
-      
-    
-    
