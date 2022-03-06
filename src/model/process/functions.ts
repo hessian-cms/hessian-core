@@ -1,5 +1,5 @@
-import { Process } from "./Process.interface";
+import { Processes } from "./Processes.interface";
 
-export const validateProcess = (process:Process) => new Promise<"OK">((resolve, reject) => {
+export const validateProcess = (process:Processes) => new Promise<"OK">((resolve, reject) => {
     resolve("OK");
 })
