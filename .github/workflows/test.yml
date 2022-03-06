@@ -13,13 +13,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Install dependencies
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: install
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with: 
+        node-version: 16.x
     - name: Run tests
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: test
+      run: npx yarn install
+    - name: Walk tests
+      run: npx yarn test
+      
     
     
