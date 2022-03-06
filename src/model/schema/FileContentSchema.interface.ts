@@ -3,5 +3,5 @@ export interface FileContentSchema {
     maxSize?: number,
     minSize?: number,
     mimeType?: string,
-    ending?: string
+    filenamePattern?: string
 }
