@@ -1,5 +1,6 @@
 import { validateProcesses, WrongEntryTarget, WrongTarget } from "../src/hessian";
-import { INVALID_PROCESS_ENTRY_PROCESS_DEMO, INVALID_PROCESS_TARGET_DEMO, VALID_PROCESS_DEMO } from "./process.data";
+import { NotReferenced } from "../src/model/process/errors";
+import { INVALID_PROCESS_ENTRY_PROCESS_DEMO, INVALID_PROCESS_TARGET_DEMO, VALID_PROCESS_DEMO, INVALID_PROCESS_NO_REFERENCE_TO_STATE } from "./process.data";
 
 describe("Process testing", () => {
     test("Valid Process", async () => {
@@ -15,5 +16,10 @@ describe("Process testing", () => {
     test("Invalid Process: wrong target", async () => {
         expect.assertions(1);
         expect(validateProcesses(INVALID_PROCESS_TARGET_DEMO)).rejects.toBeInstanceOf(WrongTarget);
+    })
+
+    test("Invalid Process: wrong target", async () => {
+        expect.assertions(1);
+        expect(validateProcesses(INVALID_PROCESS_NO_REFERENCE_TO_STATE)).rejects.toBeInstanceOf(NotReferenced);
     })
 })

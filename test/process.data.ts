@@ -66,3 +66,20 @@ export const INVALID_PROCESS_TARGET_DEMO: Processes = {
         }]
     }
 }
+
+export const INVALID_PROCESS_NO_REFERENCE_TO_STATE: Processes = {
+    entryProcess: "stateDraft",
+    stateDraft: {
+        displayName: "Draft",
+        to: [{
+            target: "statePublished",
+            allowedAttributes: ["admin"]
+        }]
+    },
+    stateArchive: {
+        displayName: "Archive"
+    },
+    statePublished: {
+        displayName: "Published"
+    }
+}
