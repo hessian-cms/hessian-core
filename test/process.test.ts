@@ -2,11 +2,10 @@ import { validateProcess } from "../src/hessian";
 import { ProcessMissingEntryTarget, ProcessMissingTarget, NotReferencedStates } from "../src/model/process/process.errors";
 import { INVALID_PROCESS_ENTRY_PROCESS_DEMO, INVALID_PROCESS_TARGET_DEMO, VALID_PROCESS_DEMO, INVALID_PROCESS_NO_REFERENCE_TO_STATE } from "./process.data";
 
-
 describe("Process testing", () => {
     test("Valid Process", async () => {
         expect.assertions(1);
-        expect(validateProcess(VALID_PROCESS_DEMO)).resolves.toEqual(true);
+        expect(validateProcess(VALID_PROCESS_DEMO)).resolves.toEqual(false);
     })
 
     test("Inavlid Process: wrong entry", async () => {
