@@ -1,4 +1,4 @@
-export interface ProcessTransition {
+export interface StateTransition {
     target: `state${string}`,
     allowedAttributes?: string[]
 }

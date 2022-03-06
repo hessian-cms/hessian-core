@@ -1,24 +1,24 @@
-import { Processes } from "../src/hessian"
+import { Process } from "../src/hessian"
 
-export const VALID_PROCESS_DEMO: Processes = {
+export const VALID_PROCESS_DEMO: Process = {
     entryProcess: "stateDraft",
     stateDraft: {
         displayName: "Draft",
-        to: [{
+        transitions: [{
             target: "statePublished",
             allowedAttributes: ["admin"]
         }]
     },
     statePublished: {
         displayName: "Published",
-        to: [{
+        transitions: [{
             target: "stateArchived",
             allowedAttributes: ["admin"]
         }]
     },
     stateArchived: {
         displayName: "Archived",
-        to: [{
+        transitions: [{
             target: "stateDraft",
             allowedAttributes: ["admin"]
         }, {
@@ -28,25 +28,25 @@ export const VALID_PROCESS_DEMO: Processes = {
     }
 }
 
-export const INVALID_PROCESS_ENTRY_PROCESS_DEMO: Processes = {
+export const INVALID_PROCESS_ENTRY_PROCESS_DEMO: Process = {
     entryProcess: "stateInvalid",
     stateDraft: {
         displayName: "Draft",
-        to: [{
+        transitions: [{
             target: "statePublished",
             allowedAttributes: ["admin"]
         }]
     },
     statePublished: {
         displayName: "Published",
-        to: [{
+        transitions: [{
             target: "stateArchived",
             allowedAttributes: ["admin"]
         }]
     },
     stateArchived: {
         displayName: "Archived",
-        to: [{
+        transitions: [{
             target: "stateDraft",
             allowedAttributes: ["admin"]
         }, {
@@ -56,11 +56,11 @@ export const INVALID_PROCESS_ENTRY_PROCESS_DEMO: Processes = {
     }
 }
 
-export const INVALID_PROCESS_TARGET_DEMO: Processes = {
+export const INVALID_PROCESS_TARGET_DEMO: Process = {
     entryProcess: "stateDraft",
     stateDraft: {
         displayName: "Draft",
-        to: [{
+        transitions: [{
             target: "statePublished",
             allowedAttributes: ["admin"]
         }]
