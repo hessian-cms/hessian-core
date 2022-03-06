@@ -76,8 +76,8 @@ export const INVALID_PROCESS_NO_REFERENCE_TO_STATE: Process = {
             allowedAttributes: ["admin"]
         }]
     },
-    stateArchive: {
-        displayName: "Archive"
+    stateArchived: {
+        displayName: "Archived"
     },
     statePublished: {
         displayName: "Published"
