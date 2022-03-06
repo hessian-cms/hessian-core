@@ -1,7 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: Test Hessian CMS
 
 on:
   push:
@@ -13,16 +10,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - uses: borales/actions-yarn@v2.3.0
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install dependencies
+      uses: borales/actions-yarn@v2.3.0
       with:
         cmd: install
-    - uses: borales/actions-yarn@v2.3.0
+    - name: Run tests
+      uses: borales/actions-yarn@v2.3.0
       with:
         cmd: test
     
