@@ -12,10 +12,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Upload files
+    - name: Upload repository
       uses: actions/upload-artifact@v3
       with:
-        name: test
+        name: repo-plain
+        path: ./
   setup:
     needs: checkout
     runs-on: ubuntu-latest
@@ -24,10 +25,6 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
-    - name: Download files
-      uses: actions/download-artifact@v3
-      with:
-        name: test
     - name: Show node --version
       run: node --version
   install:
@@ -38,16 +35,8 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
-    - name: Download files
-      uses: actions/download-artifact@v3
-      with:
-        name: test
     - name: Install dependencies
       run: npx yarn install
-    - name: Upload files
-      uses: actions/download-artifact@v3
-      with:
-        name: test
   test:
     needs: install
     runs-on: ubuntu-latest
@@ -56,9 +45,5 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
-    - name: Download files
-      uses: actions/download-artifact@v3
-      with:
-        name: test
     - name: Walk tests
       run: npx yarn test
