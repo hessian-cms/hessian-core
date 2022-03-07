@@ -29,6 +29,8 @@ jobs:
           !dist
         retention-days: 1
   test:
+    needs: checkout-install
+    steps:
     - name: Install Node
       uses: actions/setup-node@v2
       with: 
