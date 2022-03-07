@@ -7,19 +7,28 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+  setup:
+    needs: checkout
+    runs-on: ubuntu-latest
+    steps:
     - name: Install Node
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
     - name: Show node --version
       run: node --version
+  install:
+    needs: setup
+    runs-on: ubuntu-latest
     - name: Install dependencies
       run: npx yarn install
+  test:
+    needs: install
+    runs-on: ubuntu-latest
     - name: Walk tests
       run: npx yarn test
