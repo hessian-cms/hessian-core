@@ -7,21 +7,11 @@ on:
     branches: [ main ]
 
 jobs:
-  checkout:
+  checkout-and-install:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Upload repository
-      uses: actions/upload-artifact@v3
-      with:
-        name: repo-plain
-        path: ./
-        retention-days: 1
-  install:
-    needs: checkout
-    runs-on: ubuntu-latest
-    steps:
     - name: Install Node
       uses: actions/setup-node@v2
       with: 
@@ -40,7 +30,7 @@ jobs:
         path: ./
         retention-days: 1
   test:
-    needs: install
+    needs: checkout-and-install
     runs-on: ubuntu-latest
     steps:
     - name: Install Node
