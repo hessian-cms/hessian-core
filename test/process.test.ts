@@ -17,7 +17,7 @@ describe("Process testing", () => {
     })
 
     test("Invalid Process: Not referenced", () => {
-        expect(validateProcess(INVALID_PROCESS_NO_REFERENCE_TO_STATE)).rejects.toBeInstanceOf(NotReferencedStates);
+        return expect(validateProcess(INVALID_PROCESS_NO_REFERENCE_TO_STATE)).rejects.toBeInstanceOf(NotReferencedStates);
     })
 
     test("Valid Subject access accessableForAttributes not set", () => {
