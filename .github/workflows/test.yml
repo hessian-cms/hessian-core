@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
+    - name: Show node --version
+      run: node --version
     - name: Install dependencies
       run: npx yarn install
     - name: Walk tests
