@@ -1,5 +1,6 @@
 import { Subject } from "../Subject.interface";
 import { Process } from "./Process.interface";
+import { StateName } from "./process.types";
 import { State } from "./State.interface";
 
 export const validateSubjectHasAccessToState = async (subject: Subject, currentState: StateName, process: Process): Promise<boolean> => {

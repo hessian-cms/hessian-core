@@ -1,6 +1,7 @@
 import { NotReferencedStates, ProcessMissingEntryTarget, ProcessMissingTarget } from "./process.errors";
 import { State } from "./State.interface";
 import { Process } from "./Process.interface";
+import { StateName } from "./process.types";
 
 export const validateProcess = async (process: Process): Promise<true> => {
     const validKeys: string[] = Object.keys(process).filter((key: string) => key.startsWith("state"));
