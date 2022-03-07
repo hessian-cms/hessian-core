@@ -20,23 +20,5 @@ jobs:
       run: node --version
     - name: Install dependencies
       run: npx yarn install
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: repo-build
-        path: ./
-        retention-days: 1
-  test:
-    needs: checkout-and-install
-    runs-on: ubuntu-latest
-    steps:
-    - name: Install Node
-      uses: actions/setup-node@v2
-      with: 
-        node-version: 16.x
-    - name: Download artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: repo-build
     - name: Walk tests
       run: npx yarn test
