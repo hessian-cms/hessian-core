@@ -6,5 +6,6 @@ export const validateSubjectHasAccessToState = async (subject: Subject, currentS
     if (process[currentState] === undefined) throw Error(`State ${currentState} doesn't exist`);
     const state: State = process[currentState];
     const accessableForAttributes: string[] = state.accessableForAttributes || [];
+    if(accessableForAttributes.length === 0) return true;
     return subject.attributes.some((attribute: string) => accessableForAttributes.includes(attribute));
 }
