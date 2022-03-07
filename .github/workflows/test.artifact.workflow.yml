@@ -1,0 +1,43 @@
+name: Artifact - Test Hessian CMS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  checkout-install:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with: 
+        node-version: 16.x
+    - name: node --version
+      run: node --version
+    - name: Install dependencies
+      run: npx yarn install
+    - name: Archive with dependencies
+      uses: actions/upload-artifact@v3
+      with:
+        name: hessian-cms-core-install
+        path: |
+          ./
+          !dist
+        retention-days: 1
+  test:
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with: 
+        node-version: 16.x
+    - name: node --version
+      run: node --version
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: hessian-cms-core-install
+    - name: Walk tests
+      run: npx yarn test
