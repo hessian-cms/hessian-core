@@ -6,7 +6,7 @@ import { INVALID_PROCESS_ENTRY_PROCESS_DEMO, INVALID_PROCESS_TARGET_DEMO, VALID_
 describe("Process testing", () => {
     test("Valid Process", async () => {
         expect.assertions(1);
-        expect(validateProcess(VALID_PROCESS_DEMO)).resolves.toEqual(false);
+        expect(validateProcess(VALID_PROCESS_DEMO)).resolves.toEqual(true);
     })
 
     test("Inavlid Process: wrong entry", async () => {
