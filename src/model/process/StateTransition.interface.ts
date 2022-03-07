@@ -1,4 +1,4 @@
 export interface StateTransition {
-    target: `state${string}`,
+    target: StateName,
     allowedAttributes?: string[]
 }
