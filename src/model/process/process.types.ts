@@ -1,0 +1,1 @@
+type StateName = `state${string}`;
