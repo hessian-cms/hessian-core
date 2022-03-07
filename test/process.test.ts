@@ -35,6 +35,6 @@ describe("Process testing", () => {
     test("Valid invalid Subject access", () => {
         return expect(validateSubjectHasAccessToState(SUBJECT_WRITER, "stateArchived", VALID_PROCESS_DEMO))
             .resolves
-            .toEqual(true);
+            .toEqual(false);
     })
 })
