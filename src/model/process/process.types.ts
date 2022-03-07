@@ -1,1 +1,1 @@
-type StateName = `state${string}`;
+export type StateName = `state${string}`;
