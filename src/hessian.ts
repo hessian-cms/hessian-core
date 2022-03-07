@@ -2,7 +2,7 @@ export { Subject } from "./model/Subject.interface"
 
 export { ContentTypeDefinition } from "./model/ContentTypeDefinition.interface"
 
-export { validateProcess } from "./model/process/process.functions"
+export { validateProcess } from "./model/process/validateProcess.function"
 export { ProcessMissingEntryTarget, ProcessMissingTarget } from "./model/process/process.errors"
 export { Process } from "./model/process/Process.interface"
 export { State } from "./model/process/State.interface"
