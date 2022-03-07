@@ -30,6 +30,7 @@ jobs:
         retention-days: 1
   test:
     needs: checkout-install
+    runs-on: ubuntu-latest
     steps:
     - name: Install Node
       uses: actions/setup-node@v2
