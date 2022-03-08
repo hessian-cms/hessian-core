@@ -1,6 +1,7 @@
 import { NotReferencedStates, ProcessMissingEntryTarget, ProcessMissingTarget } from "./process.errors";
 import { State } from "./State.interface";
 import { Process } from "./Process.interface";
+import { StateName } from "./process.types";
 
 export const validateProcess = async (process: Process): Promise<true> => {
     const validKeys: string[] = Object.keys(process).filter((key: string) => key.startsWith("state"));
@@ -9,7 +10,7 @@ export const validateProcess = async (process: Process): Promise<true> => {
         throw new ProcessMissingEntryTarget(`Missing state for Entry: "${process.entryProcess}"`);
     }
 
-    const invalidKeys: string[] = getInvalidKeys(validKeys, validKeys.map(key => process[key as `state${string}`]));
+    const invalidKeys: string[] = getInvalidKeys(validKeys, validKeys.map(key => process[key as StateName]));
 
     if (invalidKeys.length > 0) {
         throw new ProcessMissingTarget(`Missing targeted states: ${invalidKeys.join(", ")}`)
@@ -33,7 +34,7 @@ const getInvalidKeys = (validKeys: string[], states: State[]): string[] => {
 const hasUnreferencedStates = (validKeys: string[], process: Process): boolean => {
     const targetStates = new Set<string>();
     validKeys.forEach((key) => {
-        const state: State = process[key as `state${string}`];
+        const state: State = process[key as StateName];
         if (state.transitions) {
             state.transitions.forEach(transition => targetStates.add(transition.target));
         }
