@@ -53,7 +53,7 @@ jobs:
     - name: Walk tests
       run: npx yarn test
   finalize:
-    needs: [install, test]
+    needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
