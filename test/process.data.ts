@@ -1,4 +1,14 @@
-import { Process } from "../src/hessian"
+import { Process, Subject } from "../src/hessian"
+
+export const SUBJECT_ADMIN: Subject = {
+    name: "SUBJECT_ADMIN",
+    attributes: ["admin"]
+}
+
+export const SUBJECT_WRITER: Subject = {
+    name: "SUBJECT_WRITER",
+    attributes: ["writer"]
+}
 
 export const VALID_PROCESS_DEMO: Process = {
     entryProcess: "stateDraft",
@@ -24,7 +34,8 @@ export const VALID_PROCESS_DEMO: Process = {
         }, {
             target: "statePublished",
             allowedAttributes: ["admin"]
-        }]
+        }],
+        accessableForAttributes: ["admin"]
     }
 }
 

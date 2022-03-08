@@ -7,5 +7,5 @@ export interface StateId {
 export interface State {
     displayName?: string,
     transitions?: StateTransition[],
-    visibleToAttributes?: string[]
+    accessableForAttributes?: string[]
 }

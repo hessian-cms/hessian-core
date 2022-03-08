@@ -1,4 +1,6 @@
+import { StateName } from "./process.types";
+
 export interface StateTransition {
-    target: `state${string}`,
+    target: StateName,
     allowedAttributes?: string[]
 }

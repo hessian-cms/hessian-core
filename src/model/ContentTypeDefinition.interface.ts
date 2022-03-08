@@ -1,7 +1,7 @@
-import { ObjectContentSchema } from "../hessian";
-import { FileContentSchema } from "./schema/FileContentSchema.interface";
+import { ContentSchema } from "../hessian";
 
-export default interface ContentTypeDefinition<T extends ObjectContentSchema | FileContentSchema> {
-    name: string,
-    schema: T,
+export interface ContentTypeDefinition {
+    displayName?: string,
+    schema: ContentSchema,
+    process?: string
 }

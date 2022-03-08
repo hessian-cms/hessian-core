@@ -1,7 +1,8 @@
+import { StateName } from "./process.types";
 import { State } from "./State.interface";
 
 export interface Process {
-    entryProcess: `state${string}`,
-    currentState?: State,
-    [name: `state${string}`]: State
+    entryProcess: StateName,
+    [name: StateName]: State
 }
+
