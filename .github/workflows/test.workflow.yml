@@ -23,9 +23,9 @@ jobs:
     - name: Upload full-build
       uses: actions/upload-artifact@v3
       with:
-          name: full-build
-          path: *
-          retention-days: 5
+        name: full-build
+        path: *
+        retention-days: 5
   lint:
     needs: install
     runs-on: ubuntu-latest
@@ -73,11 +73,11 @@ jobs:
     - name: node --version
       run: node --version
     - name: Upload full-build
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: |
-            *
-            !dist
-            !node_modules
-          retention-days: 5
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: |
+          *
+          !dist
+          !node_modules
+        retention-days: 5
