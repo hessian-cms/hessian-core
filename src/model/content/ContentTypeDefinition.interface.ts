@@ -1,4 +1,4 @@
-import { ContentSchema } from "../hessian";
+import { ContentSchema } from "../../hessian";
 
 export interface ContentTypeDefinition {
     displayName?: string,

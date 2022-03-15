@@ -6,8 +6,8 @@ import { StateName } from "./process.types";
 export const validateProcess = async (process: Process): Promise<true> => {
     const validKeys: string[] = Object.keys(process).filter((key: string) => key.startsWith("state"));
 
-    if (!validKeys.includes(process.entryProcess)) {
-        throw new ProcessMissingEntryTarget(`Missing state for Entry: "${process.entryProcess}"`);
+    if (!validKeys.includes(process.startState)) {
+        throw new ProcessMissingEntryTarget(`Missing state for Entry: "${process.startState}"`);
     }
 
     const invalidKeys: string[] = getInvalidKeys(validKeys, validKeys.map(key => process[key as StateName]));
