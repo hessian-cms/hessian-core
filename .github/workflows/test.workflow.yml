@@ -20,47 +20,64 @@ jobs:
       run: node --version
     - name: Install dependencies
       run: npx yarn install
+    - name: Upload full-build
+        uses: actions/upload-artifact@v3
+        with:
+          name: full-build
+          path: *
+          retention-days: 5
   lint:
     needs: install
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: Download full-build
+      uses: actions/download-artifact@v3
+      with:
+        name: full-build
     - name: Install Node
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
     - name: node --version
       run: node --version
-    - name: Install dependencies
-      run: npx yarn install
     - name: Lint project
       run: npx yarn run lint
   test:
     needs: install
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: Download full-build
+      uses: actions/download-artifact@v3
+      with:
+        name: full-build
     - name: Install Node
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
     - name: node --version
       run: node --version
-    - name: Install dependencies
-      run: npx yarn install
     - name: Walk tests
       run: npx yarn test
   finalize:
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: Download full-build
+      uses: actions/download-artifact@v3
+      with:
+        name: full-build
     - name: Install Node
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
     - name: node --version
       run: node --version
+    - name: Upload full-build
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: |
+            *
+            !dist
+            !node_modules
+          retention-days: 5
