@@ -75,12 +75,14 @@ export default class Hessian {
 
     /** */
     persistsObjectContent(contentType: string, content: Content<ObjectContent>): Promise<Content<ObjectContent>> {
+        console.log(contentType, content);
         return new Promise(
             (resolve, reject) => reject(new Error("Not imeplemented"))
         )
     }
 
     persistFileContent(contentType: string, content: Content<FileContent>): Promise<Content<FileContent>> {
+        console.log(contentType, content);
         return new Promise(
             (resolve, reject) => reject(new Error("Not imeplemented"))
         )
@@ -100,8 +102,8 @@ export default class Hessian {
         )
     }
 
-    findContent(contentType: string, query:any): Promise<Content<ObjectContent | FileContent>[]> {
-        console.log(contentType);
+    findContent(contentType: string, query?: unknown): Promise<Content<ObjectContent | FileContent>[]> {
+        console.log(contentType, query);
         return new Promise(
             (resolve, reject) => reject(new Error("Not imeplemented"))
         )
