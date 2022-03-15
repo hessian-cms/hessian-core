@@ -21,8 +21,8 @@ jobs:
     - name: Install dependencies
       run: npx yarn install
     - name: Upload full-build
-        uses: actions/upload-artifact@v3
-        with:
+      uses: actions/upload-artifact@v3
+      with:
           name: full-build
           path: *
           retention-days: 5
