@@ -10,6 +10,7 @@ export { State } from "./model/process/State.interface"
 export { StateName } from "./model/process/process.types"
 export { StateTransition } from "./model/process/StateTransition.interface"
 
+export { Content } from "./model/content/Content.interface"
 export { ContentSchema, FILE_CONTENT_SCHEMA, OBJECT_CONTENT_SCHEMA } from "./model/content/schema/ContentSchema.type"
 export { FileContentSchema } from "./model/content/schema/FileContentSchema.interface"
 export { ObjectContentSchema } from "./model/content/schema/ObjectContentSchema.interface"
