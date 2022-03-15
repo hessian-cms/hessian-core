@@ -1,5 +1,5 @@
 import { Process } from "./hessian";
-import { ContentTypeDefinition } from "./model/ContentTypeDefinition.interface";
+import { ContentTypeDefinition } from "./model/content/ContentTypeDefinition.interface";
 
 export default class Hessian {
     addProcess(name: string, process: Process): Promise<Process> {
