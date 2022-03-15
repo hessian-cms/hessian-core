@@ -14,5 +14,8 @@ export { ContentSchema, FILE_CONTENT_SCHEMA, OBJECT_CONTENT_SCHEMA } from "./mod
 export { FileContentSchema } from "./model/schema/FileContentSchema.interface"
 export { ObjectContentSchema } from "./model/schema/ObjectContentSchema.interface"
 
+export { Taxonomies } from "./model/taxonomy/Taxonomies.interface"
+export { Taxonomy } from "./model/taxonomy/Taxonomy.interface"
+
 import Hessian from "./Hessian.class"
 export default Hessian
