@@ -11,7 +11,7 @@ export const SUBJECT_WRITER: Subject = {
 }
 
 export const VALID_PROCESS_DEMO: Process = {
-    entryProcess: "stateDraft",
+    startState: "stateDraft",
     stateDraft: {
         displayName: "Draft",
         transitions: [{
@@ -40,7 +40,7 @@ export const VALID_PROCESS_DEMO: Process = {
 }
 
 export const INVALID_PROCESS_ENTRY_PROCESS_DEMO: Process = {
-    entryProcess: "stateInvalid",
+    startState: "stateInvalid",
     stateDraft: {
         displayName: "Draft",
         transitions: [{
@@ -68,7 +68,7 @@ export const INVALID_PROCESS_ENTRY_PROCESS_DEMO: Process = {
 }
 
 export const INVALID_PROCESS_TARGET_DEMO: Process = {
-    entryProcess: "stateDraft",
+    startState: "stateDraft",
     stateDraft: {
         displayName: "Draft",
         transitions: [{
@@ -79,7 +79,7 @@ export const INVALID_PROCESS_TARGET_DEMO: Process = {
 }
 
 export const INVALID_PROCESS_NO_REFERENCE_TO_STATE: Process = {
-    entryProcess: "stateDraft",
+    startState: "stateDraft",
     stateDraft: {
         displayName: "Draft",
         transitions: [{
