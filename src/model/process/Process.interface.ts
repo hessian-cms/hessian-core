@@ -5,3 +5,4 @@ export interface Process {
     startState: StateName,
     [name: StateName]: State
 }
+
