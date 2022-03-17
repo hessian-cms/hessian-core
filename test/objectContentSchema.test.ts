@@ -1,4 +1,4 @@
-import { validateObjectContentSchema } from "../src/model/schema/ObjectContentSchema.interface";
+import { validateObjectContentSchema } from "../src/model/content/schema/ObjectContentSchema.interface";
 import { CORRECT_PAYLOAD, INCORRECT_PAYLOAD, INTEGER_CONTENT_TYPE, OBJECT_CONTENT_SCHEMA } from "./objectContentSchema.data";
 
 describe("Process testing", () => {
