@@ -5,3 +5,4 @@ export interface Process {
     entryProcess: StateName,
     [name: StateName]: State
 }
+
