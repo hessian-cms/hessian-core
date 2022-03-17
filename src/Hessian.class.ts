@@ -1,5 +1,7 @@
-import { Process } from "./hessian";
-import { ContentTypeDefinition } from "./model/ContentTypeDefinition.interface";
+import { Content, Process } from "./hessian";
+import { ContentTypeDefinition } from "./model/content/ContentTypeDefinition.interface";
+import { FileContent } from "./model/content/FileContent.interface";
+import { ObjectContent } from "./model/content/ObjectContent.interface";
 
 export default class Hessian {
     addProcess(name: string, process: Process): Promise<Process> {
@@ -66,6 +68,42 @@ export default class Hessian {
 
     getContentType(name: string): Promise<ContentTypeDefinition> {
         console.log(name);
+        return new Promise(
+            (resolve, reject) => reject(new Error("Not imeplemented"))
+        )
+    }
+
+    /** */
+    persistsObjectContent(contentType: string, content: Content<ObjectContent>): Promise<Content<ObjectContent>> {
+        console.log(contentType, content);
+        return new Promise(
+            (resolve, reject) => reject(new Error("Not imeplemented"))
+        )
+    }
+
+    persistFileContent(contentType: string, content: Content<FileContent>): Promise<Content<FileContent>> {
+        console.log(contentType, content);
+        return new Promise(
+            (resolve, reject) => reject(new Error("Not imeplemented"))
+        )
+    }
+
+    getContent(id: string): Promise<Content<ObjectContent | FileContent>> {
+        console.log(id);
+        return new Promise(
+            (resolve, reject) => reject(new Error("Not imeplemented"))
+        )
+    }
+
+    deleteContent(id: string): Promise<Content<ObjectContent | FileContent>> {
+        console.log(id);
+        return new Promise(
+            (resolve, reject) => reject(new Error("Not imeplemented"))
+        )
+    }
+
+    findContent(contentType: string, query?: unknown): Promise<Content<ObjectContent | FileContent>[]> {
+        console.log(contentType, query);
         return new Promise(
             (resolve, reject) => reject(new Error("Not imeplemented"))
         )

@@ -7,7 +7,7 @@
     "build": "tsc",
     "test": "jest",
     "dev:test": "jest --watchAll",
-    "lint": "eslint ./src --ext .ts",
+    "lint": "eslint ./src --max-warnings=0 --ext .ts",
     "postinstall": "tsc"
   },
   "dependencies": {
