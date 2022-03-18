@@ -27,7 +27,7 @@ jobs:
         path: | 
           ./
           !node_modules
-        retention-days: 5
+        retention-days: 2
   lint:
     needs: install
     runs-on: ubuntu-latest
@@ -54,6 +54,8 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: build
+    - name: Start depending databases
+      run: docker-compose up -d
     - name: Install Node
       uses: actions/setup-node@v2
       with: 
@@ -64,6 +66,8 @@ jobs:
       run: npx yarn install
     - name: Walk tests
       run: npx yarn test
+    - name: Stop depending databases
+      run: docker-compose down
   finalize:
     needs: [lint, test]
     runs-on: ubuntu-latest
