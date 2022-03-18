@@ -36,6 +36,7 @@ describe("MongoDB connection tests", () => {
         await client.close();
     })
 
+    // Inserting an item then deleting it
     test("Insert and Delete", async () => {
         const id: ObjectId = (await collection.insertOne(DEMO_PERSON)).insertedId;
         const deletedCount = (await collection.deleteOne({_id: id})).deletedCount;

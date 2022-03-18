@@ -19,6 +19,7 @@ describe("Redis connection tests", () => {
         await client.quit();
     })
 
+    // Just adding a Value, then checkig if it has proper value
     test("Test connection", async () => {
         await client.set(TEST_KEY, TEST_VALUE);
         const result: string | null = await client.get(TEST_KEY);
