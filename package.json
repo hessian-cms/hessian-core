@@ -11,7 +11,8 @@
     "postinstall": "tsc"
   },
   "dependencies": {
-    "ajv": "^8.10.0"
+    "ajv": "^8.10.0",
+    "mongodb": "^4.4.1"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
