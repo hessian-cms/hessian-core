@@ -1,1 +1,0 @@
-export const REDIS_CONNECTION_URL:string = process.env.REDIS_CONNECTION_URL || "redis://localhost:6379";
