@@ -1,7 +1,7 @@
 import Minio = require("minio")
-import MinioWrapper from "../../src/databases/container/Container"
 import fs from "fs"
 import path = require("path")
+import MinioWrapper from "../../../src/databases/container/Container"
 
 const MINIO_TEST_BUCKET_NAME = "pictures"
 const TEST_IMAGE_NAME = "phoca-download-r.png"
